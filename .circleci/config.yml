@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
   build:
-    parallelism: 11
+    parallelism: 5
     machine: true
     resource_class: kelvintaywl-cci/machine3-linux-tf
     steps:
