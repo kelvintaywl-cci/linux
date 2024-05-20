@@ -2,20 +2,8 @@ version: 2.1
 
 jobs:
   build:
-    parallelism: 20
-    docker:
-      - image: cimg/base:2024.01
+    parallelism: 11
+    machine: true
+    resource_class: kelvintaywl-cci/machine3-linux-tf
     steps:
-      # - run: git config --global feature.experimental blobless
-      - run:
-          command: | 
-            while true; do
-              sleep 5
-              # NOTE: on MacOS, the f argument is not supported.
-              # In this case, you can drop the f argument instead.
-              ps auxwwf
-              echo "======"
-            done
-          background: true
       - checkout
-      # - run: git clone --filter=blob:limit=1m https://github.com/ogii-test/linux.git
